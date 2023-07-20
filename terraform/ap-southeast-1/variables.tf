@@ -4,10 +4,10 @@ variable "region" {
 variable "default_tags" {
   description = "(Required) Default tag for AWS resource"
   default = {
-    env         = "demo"
-    project     = "demo-aws-cloudday-vn"
-    github_repo = "github.com/tnx-journey-to-cloud/demo-aws-cloudday-vn"
-    component   = "cloud-day"
+    env         = "vntechies"
+    project     = "013-demo-gitops"
+    github_repo = "github.com/vntechies/013-demo-gitops"
+    component   = "thodung"
   }
 }
 
@@ -49,6 +49,7 @@ variable "vpc" {
             "kubernetes.io/role/elb" = "1"
           }
         },
+
         public_subnet3 = {
           route_table_name = "public_rtb"
           cidr             = "10.0.3.0/24"
@@ -63,6 +64,7 @@ variable "vpc" {
     }
   }
 }
+
 
 variable "eks" {
   default = {

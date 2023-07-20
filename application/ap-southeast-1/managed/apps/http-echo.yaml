@@ -3,9 +3,9 @@ kind: Application
 metadata:
   name: http-echo
 spec:
-  project: cloud-day-demo
+  project: vntechies
   destination:
-    server: https://kubernetes.default.svc
+    server: https://1470FBE09E07236EE4CF9E9295AE3126.gr7.ap-southeast-1.eks.amazonaws.com
     namespace: http-echo
   syncPolicy:
     automated:
@@ -16,7 +16,7 @@ spec:
   source:
     repoURL: https://github.com/hungran/http-echo-helm-chart.git
     path: charts/http-echo
-    targetRevision: "http-echo-0.1.1"
+    targetRevision: "http-echo-0.1.7"
     helm: 
       values: |
         #
@@ -60,8 +60,8 @@ spec:
               hosts:
                 - http-echo.hungran.cloud
         autoscaling:
-          enabled: false
-          minReplicas: 4
-          maxReplicas: 10
+          enabled: true
+          minReplicas: 2
+          maxReplicas: 6
           targetCPUUtilizationPercentage: 80
 
